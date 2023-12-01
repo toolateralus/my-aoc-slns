@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
-string[] data = File.ReadAllLines("/home/josh/source/AoC 2023/day1/input.txt");
+string[] data = File.ReadAllLines("../input.txt");
 
 //Part1(data);
 //Part2(data);
@@ -46,9 +46,19 @@ static void Part2V2(IEnumerable<string> data) {
 
     foreach (var line in data) {
         
-        var modifiedLine = Regex.Replace(line, pattern, match => singleDigits[match.Value]);
-        System.Console.WriteLine($"{{\told: {line}\n\tnew : {modifiedLine}\n}}");
-        System.Console.WriteLine();
+        var modifiedLine = Regex.Replace(line, pattern, 
+        match => { // the replacement
+            #if DEBUG 
+            Console.WriteLine(match.Value);
+            #endif
+            
+            return singleDigits[match.Value];
+        });
+        
+        #if DEBUG 
+            Console.WriteLine($"{{\told: {line}\n\tnew : {modifiedLine}\n}}");
+        #endif
+        
         intermediate.Add(modifiedLine);
     }
     
