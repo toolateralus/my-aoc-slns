@@ -11,19 +11,18 @@ static void Part1(string[] data)
 {
     List<int> results = [];
     
-    foreach (string line in data)
-    {
-        NormalNumber(results, line);
+    foreach (string line in data) {
+        char? lhs = line.FirstOrDefault(char.IsDigit);
+        char? rhs = line.LastOrDefault(char.IsDigit);
+        results.Add(int.Parse(lhs.ToString() + rhs.ToString()));
     }
-
+    
     int total = 0;
     
     foreach (int item in results)
-    {
         total += item;
-    }
     
-    Console.WriteLine(total);
+    Console.WriteLine($"Part 1 Answer : {total}");
 }
 
 static void Part2(string[] data) {
@@ -51,7 +50,8 @@ static void Part2(string[] data) {
         char? lhs = line.FirstOrDefault(char.IsDigit);
         char? rhs = line.LastOrDefault(char.IsDigit);
         
-        // this just 
+        // this just grabs the first 'one' or 'eight' but we need to parse 'oneight' as '1 8' 
+            // -- info gotten from a spoiler on reddit.
         if (lhs is null)
             for (int i = 0; i < line.Length; ++i) {
                 if (!first && singleDigits.TryGetValue(line[..i], out var value)) {
@@ -70,9 +70,7 @@ static void Part2(string[] data) {
                 } 
             }
         
-        if (lhs is null || rhs is null)
-            throw new InvalidDataException(line + " contained no matching nums");
-        
+        // if we found a 'one' or 'eight' use that, else use the single digit like '1' or '8'
         int digit = int.Parse(first ? sFirst : lhs.ToString() + (last ? sLast : rhs.ToString()));
         
         results.Add(digit);
@@ -84,19 +82,5 @@ static void Part2(string[] data) {
         total += res;
     }
     
-    System.Console.WriteLine(total);
-}
-
-static void NormalNumber(List<int> results, string line)
-{
-    char? lhs = line.FirstOrDefault(char.IsDigit);
-    char? rhs = line.LastOrDefault(char.IsDigit);
-    if (lhs is null || rhs is null)
-    {
-        throw new InvalidDataException(line + " contained no matching nums");
-    }
-    
-    int digit = int.Parse(lhs.ToString() + rhs.ToString());
-    
-    results.Add(digit);
+    System.Console.WriteLine($"Part 2 Answer : {total}");
 }
