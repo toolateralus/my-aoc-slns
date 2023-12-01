@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = day1
+build_property.ProjectDir = /home/josh/source/AoC 2023/day1/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

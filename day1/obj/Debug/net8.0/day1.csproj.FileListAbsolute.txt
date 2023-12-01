@@ -1,0 +1,14 @@
+/home/josh/source/AoC 2023/day1/bin/Debug/net8.0/day1
+/home/josh/source/AoC 2023/day1/bin/Debug/net8.0/day1.deps.json
+/home/josh/source/AoC 2023/day1/bin/Debug/net8.0/day1.runtimeconfig.json
+/home/josh/source/AoC 2023/day1/bin/Debug/net8.0/day1.dll
+/home/josh/source/AoC 2023/day1/bin/Debug/net8.0/day1.pdb
+/home/josh/source/AoC 2023/day1/obj/Debug/net8.0/day1.GeneratedMSBuildEditorConfig.editorconfig
+/home/josh/source/AoC 2023/day1/obj/Debug/net8.0/day1.AssemblyInfoInputs.cache
+/home/josh/source/AoC 2023/day1/obj/Debug/net8.0/day1.AssemblyInfo.cs
+/home/josh/source/AoC 2023/day1/obj/Debug/net8.0/day1.csproj.CoreCompileInputs.cache
+/home/josh/source/AoC 2023/day1/obj/Debug/net8.0/day1.dll
+/home/josh/source/AoC 2023/day1/obj/Debug/net8.0/refint/day1.dll
+/home/josh/source/AoC 2023/day1/obj/Debug/net8.0/day1.pdb
+/home/josh/source/AoC 2023/day1/obj/Debug/net8.0/day1.genruntimeconfig.cache
+/home/josh/source/AoC 2023/day1/obj/Debug/net8.0/ref/day1.dll
