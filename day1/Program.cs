@@ -5,9 +5,10 @@ using System.Text.RegularExpressions;
 string[] data = File.ReadAllLines("/home/josh/source/AoC 2023/day1/input.txt");
 
 //Part1(data);
-Part2(data);
+//Part2(data);
+Part2V2(data);
 
-static void Part1(string[] data)
+static void Part1(IEnumerable<string> data)
 {
     List<int> results = [];
     
@@ -25,7 +26,36 @@ static void Part1(string[] data)
     Console.WriteLine($"Part 1 Answer : {total}");
 }
 
-static void Part2(string[] data) {
+static void Part2V2(IEnumerable<string> data) {
+    List<int> results = [];
+    List<string> intermediate = [];
+    Dictionary<string, string> singleDigits = new(){
+        {"zero", "0"},
+        {"one", "1"},
+        {"two", "2"},
+        {"three", "3"},
+        {"four", "4"},
+        {"five", "5"},
+        {"six", "6"},
+        {"seven", "7"},
+        {"eight", "8"},
+        {"nine", "9"},
+    };
+    
+    string pattern = string.Join("|", singleDigits.Keys);
+
+    foreach (var line in data) {
+        
+        var modifiedLine = Regex.Replace(line, pattern, match => singleDigits[match.Value]);
+        System.Console.WriteLine($"{{\told: {line}\n\tnew : {modifiedLine}\n}}");
+        System.Console.WriteLine();
+        intermediate.Add(modifiedLine);
+    }
+    
+    Part1(intermediate);
+}
+
+static void Part2(IEnumerable<string> data) {
     List<int> results = [];
     
     Dictionary<string, string> singleDigits = new(){
@@ -39,9 +69,7 @@ static void Part2(string[] data) {
         {"seven", "7"},
         {"eight", "8"},
         {"nine", "9"},
-        
     };
-    
     
     foreach (var line in data) {
         bool first = false, last = false;
