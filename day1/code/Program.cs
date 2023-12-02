@@ -20,10 +20,10 @@ static void Part1(IEnumerable<string> data)
     }
 
     int total = 0;
-
+    
     foreach (int item in results)
         total += item;
-
+    
     Console.WriteLine($"Part 1 Answer : {total}");
 }
 
