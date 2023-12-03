@@ -16,28 +16,31 @@ foreach (var line in data) {
     var rest = line[line.IndexOf(':')..];
     var atmpts = rest.Split(';');
     
+    var entry = new Entry(gameId);
+    
     foreach (var attempt in atmpts) {
         var channels = attempt.Split(',');
-        entries.Add(ProcessChannel(gameId, channels));
+        ProcessChannel(channels, entry);
     }
 }
 int sum = 0;
 
-foreach (var item in entries) {
-    
-    if (item.rgbOccurences.X > rMax)
-        continue;
-    if (item.rgbOccurences.Y > gMax)
-        continue;
-    if (item.rgbOccurences.Z > bMax)
-        continue;
+foreach (var game in entries) {
+    foreach (var item in game.rgbOccurences) {
+        if (item.X > rMax)
+            continue;
+        if (item.Y > gMax)
+            continue;
+        if (item.Z > bMax)
+            continue;
+    }
         
-    sum += item.ID; 
+    sum += game.ID; 
 }
 
 System.Console.WriteLine(sum);
 
-Entry ProcessChannel(int gameId, string[] channels) {
+void ProcessChannel(string[] channels, Entry entry) {
     int R = 0, G = 0, B = 0;
     
     foreach (var item in channels) {
@@ -53,10 +56,9 @@ Entry ProcessChannel(int gameId, string[] channels) {
             B = int.Parse(digits);
         }
     }
-    
-    return new (gameId, R, G, B);
+    entry.rgbOccurences.Add(new(R,G,B));
 }
-class Entry (int ID, int R, int G, int B) {
+class Entry (int ID) {
     public int ID = ID;
-    public Vector3 rgbOccurences = new(R,G,B);
+    public List<Vector3> rgbOccurences = [];
 }
