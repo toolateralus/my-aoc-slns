@@ -1,0 +1,15 @@
+/home/josh/source/AoC 2023/day2/bin/Debug/net8.0/day2
+/home/josh/source/AoC 2023/day2/bin/Debug/net8.0/day2.deps.json
+/home/josh/source/AoC 2023/day2/bin/Debug/net8.0/day2.runtimeconfig.json
+/home/josh/source/AoC 2023/day2/bin/Debug/net8.0/day2.dll
+/home/josh/source/AoC 2023/day2/bin/Debug/net8.0/day2.pdb
+/home/josh/source/AoC 2023/day2/obj/Debug/net8.0/day2.GeneratedMSBuildEditorConfig.editorconfig
+/home/josh/source/AoC 2023/day2/obj/Debug/net8.0/day2.AssemblyInfoInputs.cache
+/home/josh/source/AoC 2023/day2/obj/Debug/net8.0/day2.AssemblyInfo.cs
+/home/josh/source/AoC 2023/day2/obj/Debug/net8.0/day2.csproj.CoreCompileInputs.cache
+/home/josh/source/AoC 2023/day2/obj/Debug/net8.0/day2.sourcelink.json
+/home/josh/source/AoC 2023/day2/obj/Debug/net8.0/day2.dll
+/home/josh/source/AoC 2023/day2/obj/Debug/net8.0/refint/day2.dll
+/home/josh/source/AoC 2023/day2/obj/Debug/net8.0/day2.pdb
+/home/josh/source/AoC 2023/day2/obj/Debug/net8.0/day2.genruntimeconfig.cache
+/home/josh/source/AoC 2023/day2/obj/Debug/net8.0/ref/day2.dll
